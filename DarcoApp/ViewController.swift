@@ -38,20 +38,8 @@ class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHan
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "logHandler" {
-                print("LOG: \(message.body)")
+            print("LOG: \(message.body)")
             }
-    }
-    
-    @objc private func didTapButton() {
-//        guard let url = URL(string: "https://www.google.com") else {
-//            return
-//        }
-//                let webview = WKWebView()
-//        let buildFolder = Bundle.main.url(forResource: "build", withExtension: nil)!
-//        let htmlUrl = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "build")!
-//        let vc = DarcoViewController(url: htmlUrl, title: "Darco")
-//        let navVC = UINavigationController(rootViewController: vc)
-//        present(navVC, animated: true)
     }
 }
 
