@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		632F38B5264FF86E0027FF2A /* build in Resources */ = {isa = PBXBuildFile; fileRef = 632F38B4264FF86E0027FF2A /* build */; };
 		634935B326496415007A19A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634935B226496415007A19A1 /* AppDelegate.swift */; };
 		634935B526496415007A19A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634935B426496415007A19A1 /* SceneDelegate.swift */; };
 		634935B726496415007A19A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634935B626496415007A19A1 /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 		634935BF26496416007A19A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634935BD26496416007A19A1 /* LaunchScreen.storyboard */; };
 		634935CA26496416007A19A1 /* DarcoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634935C926496416007A19A1 /* DarcoAppTests.swift */; };
 		634935D526496416007A19A1 /* DarcoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634935D426496416007A19A1 /* DarcoAppUITests.swift */; };
+		634935E3264969C7007A19A1 /* DarcoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634935E2264969C7007A19A1 /* DarcoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		632F38B4264FF86E0027FF2A /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = build; path = "../../projects/react-swift-app/build"; sourceTree = "<group>"; };
 		634935AF26496415007A19A1 /* DarcoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarcoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		634935B226496415007A19A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		634935B426496415007A19A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		634935D026496416007A19A1 /* DarcoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarcoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		634935D426496416007A19A1 /* DarcoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarcoAppUITests.swift; sourceTree = "<group>"; };
 		634935D626496416007A19A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		634935E2264969C7007A19A1 /* DarcoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarcoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		634935A626496415007A19A1 = {
 			isa = PBXGroup;
 			children = (
+				632F38B4264FF86E0027FF2A /* build */,
 				634935B126496415007A19A1 /* DarcoApp */,
 				634935C826496416007A19A1 /* DarcoAppTests */,
 				634935D326496416007A19A1 /* DarcoAppUITests */,
@@ -106,6 +111,7 @@
 				634935BB26496416007A19A1 /* Assets.xcassets */,
 				634935BD26496416007A19A1 /* LaunchScreen.storyboard */,
 				634935C026496416007A19A1 /* Info.plist */,
+				634935E2264969C7007A19A1 /* DarcoViewController.swift */,
 			);
 			path = DarcoApp;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				634935BF26496416007A19A1 /* LaunchScreen.storyboard in Resources */,
+				632F38B5264FF86E0027FF2A /* build in Resources */,
 				634935BC26496416007A19A1 /* Assets.xcassets in Resources */,
 				634935BA26496415007A19A1 /* Main.storyboard in Resources */,
 			);
@@ -258,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634935E3264969C7007A19A1 /* DarcoViewController.swift in Sources */,
 				634935B726496415007A19A1 /* ViewController.swift in Sources */,
 				634935B326496415007A19A1 /* AppDelegate.swift in Sources */,
 				634935B526496415007A19A1 /* SceneDelegate.swift in Sources */,
