@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKNavigationDelegate {
+class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
 
     private let button: UIButton = {
         let button = UIButton()
@@ -22,24 +22,34 @@ class ViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
         let webview = WKWebView()
+        
+        // inject JS to capture console.log output and send to iOS
+        let source = "function captureLog(msg) { window.webkit.messageHandlers.logHandler.postMessage(msg); } window.console.log = captureLog;"
+        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+        webview.configuration.userContentController.addUserScript(script)
+        webview.configuration.userContentController.add(self, name: "logHandler")
+        
         let buildFolder = Bundle.main.url(forResource: "build", withExtension: nil)!
         let htmlUrl = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "build")!
         webview.loadFileURL(htmlUrl, allowingReadAccessTo: buildFolder)
         webview.navigationDelegate = self
         view = webview
-        
-//        view.addSubview(button)
-//        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-//        button.frame = CGRect(x: 0, y: 0, width: 220, height: 50)
-//        button.center = view.center
+    }
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "logHandler" {
+                print("LOG: \(message.body)")
+            }
     }
     
     @objc private func didTapButton() {
 //        guard let url = URL(string: "https://www.google.com") else {
 //            return
 //        }
-//        let vc = DarcoViewController(url: url, title: "Darco")
-        
+//                let webview = WKWebView()
+//        let buildFolder = Bundle.main.url(forResource: "build", withExtension: nil)!
+//        let htmlUrl = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "build")!
+//        let vc = DarcoViewController(url: htmlUrl, title: "Darco")
 //        let navVC = UINavigationController(rootViewController: vc)
 //        present(navVC, animated: true)
     }
